@@ -8,10 +8,10 @@ headless, webkit based browser.
 Usage
 -----
 
-Pageperformance v. 0.0.2
+    Pageperformance v. 0.0.2
 
-This program is intended to test the performance of a website. It uses phantomjs which is a headless,
-webkit based cli browser. 
+    This program is intended to test the performance of a website. It uses phantomjs which is a headless,
+    webkit based cli browser. 
 
     usage: page_performance_test.rb [options]
 

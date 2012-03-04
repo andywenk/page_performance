@@ -2,7 +2,10 @@ PagePerformance
 ===============
 
 Test the page performance of a single or more websites to compare them. You receive
-the average load time of each website. This library uses [Phantomjs](http://code.google.com/p/phantomjs/ "Phantomjs"), which is a 
+the average load time of each website. You can also get a summary about the used script 
+and / or iframe tags used in each page. 
+
+This library uses [Phantomjs](http://code.google.com/p/phantomjs/ "Phantomjs"), which is a 
 headless, webkit based browser.
 
 Usage
@@ -13,7 +16,7 @@ Usage
       This program is intended to test the performance of a website. It uses phantomjs which is a headless,
       webkit based cli browser. 
 
-    usage: page_performance_test.rb [options]
+    usage: run_tests [options]
 
       -u, --urls 'URLS'                the URLS to test
       -f, --file FILE                  the URLS to test from a file

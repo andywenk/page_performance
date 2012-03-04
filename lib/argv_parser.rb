@@ -13,7 +13,7 @@ module PagePerformance
         opts.banner = "Pageperformance v. #{@version}\n\nThis program is intended to test the performance of a website. It uses phantomjs which is a headless,\nwebkit based cli browser. "
         opts.set_program_name "Pageperformance v. #{@version}"
         opts.separator ""
-        opts.separator "usage: page_performance_test.rb [options]"
+        opts.separator "usage: run_tests [options]"
         opts.separator ""
 
         opts.on("-u URLS", "--urls 'URLS'", "the URLS to test") do |urls|

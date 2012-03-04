@@ -3,12 +3,14 @@ module PagePerformance
     def initialize(options, results)
       @options = options
       @results = results
+      create_result_file
     end
 
     def create_result_file
       return unless @options[:output]
       file = File.expand_path("../../#{@options[:output]}", __FILE__)
       @result_file = File.new(file,  "w+")
+      @result_file.write(file_header)
     end
 
     def write_to_console(output)
@@ -16,7 +18,7 @@ module PagePerformance
     end
 
     def write_result(url, request_time)
-      result = "#{url}: #{request_time} ms\n"
+      result = "\s#{url}: #{request_time} ms\n"
       write_to_console(result)    
       write_to_file(result)
     end
@@ -27,11 +29,29 @@ module PagePerformance
 
     def write_average_results
       return unless @result_file
-      out = "\nAverage request time:\n"
+      out = "\nAverage load time time:\n---------------------\n"
       @results.each do | url, times |
-        out += "#{url}: #{average(times)} ms\n"
+        out += "\s#{url}: #{calculate_average_load_time(times)} ms\n"
       end
       @result_file.write(out)
+    end
+
+    def write_tag_count
+      return unless @options[:scan_tags]
+      tag_scanner = TagScanner.new(@options)
+      found_tags = tag_scanner.found_tags_for_urls
+      out = "\nAmount of Tags found per URL:\n-----------------------------\n"
+      found_tags.each do | url, tags |
+        out += "\s#{url}:\n"
+        tags.each do | tag, amount |
+          out += "\s\s\s#{tag}: #{amount}\n"
+        end
+      end
+      @result_file.write(out)
+    end
+
+    def write_footer
+      @result_file.write("\nTest ended at: #{Time.now}")
     end
 
     def formated_url(url)
@@ -45,11 +65,35 @@ module PagePerformance
 
     private
 
-    def average(times)
+    def calculate_average_load_time(times)
       count = times.length
       sum = 0
       times.each { |time| sum += time }
       sum / count
+    end
+
+    def file_header
+      text = <<END
+PagePerformance test results
+============================
+
+Test started at: #{Time.now}
+
+Results for performance tests for the following URLs:
+
+#{url_list}
+
+Results:
+--------
+END
+    end
+
+    def url_list
+      out = ""
+      @options[:urls].each do | url | 
+        out += "\s+ #{url}\n" 
+      end
+      out
     end
   end
 end

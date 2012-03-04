@@ -1,5 +1,3 @@
-require './lib/output_writer'
-
 module PagePerformance
   class Testrunner
     def initialize(options)
@@ -10,12 +8,14 @@ module PagePerformance
     end
 
     def run
-      @output_writer.create_result_file
       (1..@options[:repeate] || 1).each do |i|
         @output_writer.write_to_console("round #{i}:\n")
         request_urls
+        wait? if i < @options[:repeate].to_i
       end
       @output_writer.write_average_results
+      @output_writer.write_tag_count
+      @output_writer.write_footer
     end
 
     def request_urls
@@ -37,6 +37,12 @@ module PagePerformance
         return
       end
       @results[url] = [request_time]
+    end
+
+    def wait?
+      return unless @options[:wait]
+      @output_writer.write_to_console("... waiting for #{@options[:wait]} s\n") 
+      sleep(@options[:wait].to_i)
     end
   end
 end

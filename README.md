@@ -21,9 +21,43 @@ Usage
       -o, --output STRING              write results to this output file
       -j, --javascript                 count the <script></script> tags
       -i, --iframe                     count the iframe tags
-      -q, --quiet                      count the iframe tags
-      -h, --help                       Show this message
-      -v, --version                    Show version
+      -q, --quiet                      no output during program execution
+      -h, --help                       show this message
+      -v, --version                    show version
+
+Example output (file)
+---------------------
+
+    PagePerformance results
+    =======================
+
+    Results for performance tests for the following URLs:
+
+    ["nms.de", "beangie.de", "https://www.qraex.de"]
+
+    Results:
+    --------
+    http://nms.de: 201 ms
+    http://beangie.de: 2891 ms
+    https://www.qraex.de: 753 ms
+    http://nms.de: 193 ms
+    http://beangie.de: 3023 ms
+    https://www.qraex.de: 727 ms
+    http://nms.de: 187 ms
+    http://beangie.de: 2824 ms
+    https://www.qraex.de: 727 ms
+    http://nms.de: 183 ms
+    http://beangie.de: 2772 ms
+    https://www.qraex.de: 829 ms
+    http://nms.de: 187 ms
+    http://beangie.de: 2830 ms
+    https://www.qraex.de: 769 ms
+
+    Average request time:
+    ---------------------
+    http://nms.de: 190 ms
+    http://beangie.de: 2868 ms
+    https://www.qraex.de: 761 ms
 
 Hint
 ----

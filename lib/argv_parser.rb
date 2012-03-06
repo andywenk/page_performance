@@ -62,6 +62,7 @@ module PagePerformance
       end
 
       option_parser.parse!(@args)
+      exit_if_no_outputfile_given?
 
       rescue OptionParser::MissingArgument => error
         puts "Recheck your arguments please -> #{error}"
@@ -72,8 +73,23 @@ module PagePerformance
         exit
     end
 
+    private
+
     def urls_from_file(location)
       urls = IO.readlines(location).map { |url| url.gsub(/\s|\n/,'')}
+    end
+
+    def exit_if_no_outputfile_given?
+      unless @options[:output]
+        print "No outputfile given! Continue anyway? [y|n] "
+        case gets.chomp
+        when'n'
+          puts "*** bye bye ... and thanks for all the fish ;-)"
+          exit
+        when /[^y]/
+          exit_if_no_outputfile_given?
+        end
+      end
     end
   end
 end

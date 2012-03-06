@@ -8,15 +8,19 @@ module PagePerformance
     end
 
     def run
+      abort?
       (1..@options[:repeate] || 1).each do |i|
         @output_writer.write_to_console("round #{i}:\n")
         request_urls
         wait? if i < @options[:repeate].to_i
       end
+
       @output_writer.write_average_results
       @output_writer.write_tag_count
       @output_writer.write_footer
     end
+
+    private
 
     def request_urls
       @options[:urls].each do |url|
@@ -37,6 +41,13 @@ module PagePerformance
         return
       end
       @results[url] = [request_time]
+    end
+
+    def abort?
+      trap("SIGINT") do
+        puts "\n*** bye bye and have a nice day ..."
+        exit!
+      end
     end
 
     def wait?

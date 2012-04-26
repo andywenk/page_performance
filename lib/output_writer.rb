@@ -6,6 +6,10 @@ module PagePerformance
       create_result_file
     end
 
+    def write_to_file?
+      !@options[:output].nil?
+    end
+
     def create_result_file
       return unless @options[:output]
       file = File.expand_path("../../#{@options[:output]}", __FILE__)
@@ -20,11 +24,11 @@ module PagePerformance
     def write_result(url, request_time)
       result = "\s#{url}: #{request_time} ms\n"
       write_to_console(result)    
-      write_to_file(result)
+      write_to_file(result) if write_to_file?
     end
 
     def write_to_file(result)
-      @result_file.write(result) if @result_file
+      @result_file.write(result)
     end
 
     def write_average_results

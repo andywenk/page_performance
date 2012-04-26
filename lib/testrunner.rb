@@ -15,9 +15,11 @@ module PagePerformance
         wait? if i < @options[:repeate].to_i
       end
 
-      @output_writer.write_average_results
-      @output_writer.write_tag_count
-      @output_writer.write_footer
+      if @output_writer.write_to_file?
+        @output_writer.write_average_results
+        @output_writer.write_tag_count
+        @output_writer.write_footer
+      end
     end
 
     private

@@ -15,6 +15,10 @@ module PagePerformance
         wait? if i < @options[:repeate].to_i
       end
 
+      rescue PagePerformance::Error::NoUrlToTest
+        puts "Hey - we need at least one URL to test. Use -u URLS or -f FILE"
+        exit
+
       if @output_writer.write_to_file?
         @output_writer.write_average_results
         @output_writer.write_tag_count
@@ -25,6 +29,7 @@ module PagePerformance
     private
 
     def request_urls
+      raise PagePerformance::Error::NoUrlToTest if @options[:urls] == nil
       @options[:urls].each do |url|
         request_url(url)
       end

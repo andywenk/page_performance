@@ -71,6 +71,7 @@ module PagePerformance
       rescue OptionParser::InvalidOption => error
         puts "There is a problem with your options -> #{error}"
         exit
+
     end
 
     private

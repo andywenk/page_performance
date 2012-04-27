@@ -5,7 +5,7 @@ module PagePerformance
     def initialize(args)
       @args = args
       @options = {}
-      @version = '0.1.0'
+      @version = '0.1.2'
     end
 
     def parse

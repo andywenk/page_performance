@@ -44,10 +44,11 @@ Example for running the tests:
      http://www.nms.de: 475 ms
      http://www.beangie.de: 3857 ms
 
-It's also possible (and mostly more convenient) to put the URLs in a file. One URL per line. Then call
-the script like this:
+It's also possible (and mostly more convenient) to put the URLs in a file. One URL per line. Then call the script like this:
 
-    $ ./run_tests -o out -f file_with_urls -s -i -r 3    
+    $ ./run_tests -o out -f file_with_urls -s -i -r 3
+
+You can use the '#' character at the beginning of a line for comments.
 
 Example output (file)
 ---------------------

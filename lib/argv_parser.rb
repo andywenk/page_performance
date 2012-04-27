@@ -87,7 +87,8 @@ module PagePerformance
 
     def urls_from_file(location)
       urls = IO.readlines(location).map do |url|
-        next if url.match(/^#/) || url.strip.empty?
+        url = url.strip!
+        next if url.match(/^#/) || url.empty?
         url.gsub(/\s|\n/,'')
       end
       urls = urls.compact

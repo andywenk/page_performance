@@ -33,7 +33,7 @@ module PagePerformance
         end
 
         opts.on("-o", "--output STRING", "write results to this output file") do |output|
-          @options[:output] = output
+          @options[:output] = output_location(output)
         end
 
         opts.on("-s", "--script", "count the <script> tags") do
@@ -99,6 +99,17 @@ module PagePerformance
         when /[^y]/
           exit_if_no_outputfile_given?
         end
+      end
+    end
+
+    def output_location(output)
+      case output
+      when /^\//
+        output
+      when /^\.\//
+        output
+      else
+        File.expand_path("../../#{output}", __FILE__)
       end
     end
   end

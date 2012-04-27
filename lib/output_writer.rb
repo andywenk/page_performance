@@ -12,8 +12,7 @@ module PagePerformance
 
     def create_result_file
       return unless @options[:output]
-      file = File.expand_path("../../#{@options[:output]}", __FILE__)
-      @result_file = File.new(file,  "w+")
+      @result_file = File.new(@options[:output],  "w+")
       @result_file.write(file_header)
     end
 

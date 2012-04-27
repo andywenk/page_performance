@@ -37,7 +37,7 @@ module PagePerformance
 
     def request_url(url)
       url = @output_writer.formated_url(url)
-      request_time = `phantomjs #{@phantomjs_script} #{url}`.gsub(/\n/,'').to_i
+      request_time = `phantomjs --ignore-ssl-errors=#{@options[:ignore_ssl_errors]} #{@phantomjs_script} #{url}`.gsub(/\n/,'').to_i
       add_to_results_hash(url, request_time)
       @output_writer.write_result(url, request_time)
     end

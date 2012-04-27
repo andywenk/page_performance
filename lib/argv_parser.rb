@@ -5,10 +5,12 @@ module PagePerformance
     def initialize(args)
       @args = args
       @options = {}
-      @version = '0.1.4'
+      @version = '0.1.5'
     end
 
     def parse
+      @options[:ignore_ssl_errors] = 'no'
+
       option_parser = OptionParser.new do |opts|
         opts.banner = "Pageperformance v. #{@version}\n\nThis program is intended to test the performance of a website. It uses phantomjs which is a headless,\nwebkit based cli browser. "
         opts.set_program_name "Pageperformance v. #{@version}"
@@ -44,6 +46,10 @@ module PagePerformance
         opts.on("-i", "--iframe", "count the <iframe> tags") do
           @options[:iframe] = true
           @options[:scan_tags] = true
+        end
+
+        opts.on("-I","--ignore-ssl-errors", "advice Phantomjs to ignore SSL errors") do
+          @options[:ignore_ssl_errors] = 'yes'
         end
 
         opts.on("-q", "--quiet", "no output durng program execution") do

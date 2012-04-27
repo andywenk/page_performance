@@ -11,7 +11,7 @@ headless, webkit based browser.
 Usage
 -----
 
-    Pageperformance v. 0.1.2
+    Pageperformance v. 0.1.4
 
       This program is intended to test the performance of a website. It uses phantomjs which is a headless,
       webkit based cli browser. 

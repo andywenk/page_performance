@@ -5,11 +5,11 @@ module PagePerformance
         ruby_version
         phantomjs_available
         
-        rescue PagePerformance::Error::RubyVersion
-          puts "wrong ruby version! Should be 1.9.2 or higher"
+        rescue PagePerformance::Error::RubyVersion => e
+          puts e.message
           exit
-        rescue PagePerformance::Error::Phantomjs
-          puts "phantomjs is not available. You can get it here: http://code.google.com/p/phantomjs/"
+        rescue PagePerformance::Error::Phantomjs => e
+          puts e.message
           exit
       end
 

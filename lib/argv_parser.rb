@@ -72,19 +72,28 @@ module PagePerformance
         puts "There is a problem with your options -> #{error}"
         exit
 
+      rescue PagePerformance::Error::NoUrlToTest => e
+        puts e.message
+        exit
     end
 
     private
 
     def urls_from_file(location)
-      urls = IO.readlines(location).map { |url| url.gsub(/\s|\n/,'')}
+      urls = IO.readlines(location).map do |url|
+        next if url.match(/^#/) || url.strip.empty?
+        url.gsub(/\s|\n/,'')
+      end
+      urls = urls.compact
+      raise PagePerformance::Error::NoUrlToTest if urls.empty?
+      urls
     end
 
     def exit_if_no_outputfile_given?
       unless @options[:output]
         print "No outputfile given! Continue anyway? [y|n] "
         case gets.chomp
-        when'n'
+        when 'n'
           puts "*** bye bye ... and thanks for all the fish ;-)"
           exit
         when /[^y]/

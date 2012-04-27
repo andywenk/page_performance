@@ -12,8 +12,8 @@ module PagePerformance
       @options[:urls].each do |url|
         begin
           html = fetch_url(formated_url(url))
-        rescue PagePerformance::Error::TooManyRedirects
-          puts "More than 10 HTTP redirects for #{url}. Continue to next URL ..."
+        rescue PagePerformance::Error::TooManyRedirects => e
+          puts e.message
           next
         rescue Net::HTTPBadResponse
           puts "uups ... bad response from #{url} ... better continue"

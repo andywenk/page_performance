@@ -15,8 +15,8 @@ module PagePerformance
         wait? if i < @options[:repeate].to_i
       end
 
-      rescue PagePerformance::Error::NoUrlToTest
-        puts "Hey - we need at least one URL to test. Use -u URLS or -f FILE"
+      rescue PagePerformance::Error::NoUrlToTest => e
+        puts e.message
         exit
 
       if @output_writer.write_to_file?

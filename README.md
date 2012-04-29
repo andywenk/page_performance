@@ -11,7 +11,7 @@ headless, webkit based browser.
 Usage
 -----
 
-    Pageperformance v. 0.1.5
+    Pageperformance v. 0.2.0
 
       This program is intended to test the performance of a website. It uses phantomjs which is a headless,
       webkit based cli browser. 
@@ -33,7 +33,7 @@ Usage
 Example for running the tests:
 ------------------------------
 
-    $ ./run_tests -o out -u 'www.nms.de,www.beangie.de' -s -i -r 3
+    $ ./run_page_performance -o out -u 'www.nms.de,www.beangie.de' -s -i -r 3
     round 1:
      http://www.nms.de: 522 ms
      http://www.beangie.de: 3487 ms
@@ -46,7 +46,7 @@ Example for running the tests:
 
 It's also possible (and mostly more convenient) to put the URLs in a file. One URL per line. Then call the script like this:
 
-    $ ./run_tests -o out -f file_with_urls -s -i -r 3
+    $ ./run_page_performance -o out -f file_with_urls -s -i -r 3
 
 You can use the '#' character at the beginning of a line for comments.
 
@@ -109,7 +109,3 @@ Copyright (c) 2012 Andreas Wenk
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
- 

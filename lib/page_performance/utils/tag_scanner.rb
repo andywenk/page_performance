@@ -9,6 +9,8 @@ module PagePerformance
         fetch_html_from_urls
       end
 
+      private
+
       def fetch_html_from_urls
         @options[:urls].each do |url|
           begin

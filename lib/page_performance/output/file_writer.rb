@@ -8,12 +8,6 @@ module PagePerformance
         @results = results
       end
 
-      def write_summary
-        write_average_results
-        write_tag_count
-        write_footer
-      end
-
       def create_result_file
         @result_file = File.new(@options[:output],  "w+")
         @result_file.write(file_header)
@@ -23,8 +17,15 @@ module PagePerformance
         @result_file.write(result_string)
       end
 
+      def write_summary
+        write_average_results
+        write_tag_count if @options[:scan_tags]
+        write_footer
+      end
+
+      private
+
       def write_average_results
-        return unless @result_file
         out = "\nAverage load time time:\n---------------------\n"
         @results.each do | url, times |
           out += "\s#{url}: #{calculate_average_load_time(times)} ms\n"
@@ -33,7 +34,6 @@ module PagePerformance
       end
 
       def write_tag_count
-        return unless @options[:scan_tags]
         tag_scanner = Utils::TagScanner.new(@options)
         found_tags = tag_scanner.found_tags_for_urls
         out = "\nAmount of Tags found per URL:\n-----------------------------\n"
@@ -49,8 +49,6 @@ module PagePerformance
       def write_footer
         @result_file.write("\nTest ended at: #{Time.now}")
       end
-
-      private
 
       def calculate_average_load_time(times)
         count = times.length

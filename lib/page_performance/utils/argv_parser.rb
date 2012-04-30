@@ -41,6 +41,10 @@ module PagePerformance
             @options[:output] = output_location(output)
           end
 
+          opts.on("-g", "--gps-api-key STRING", "include Google PageSpeed results with this api key") do |key|
+            @options[:google_api_key] = key
+          end
+
           opts.on("-s", "--script", "count the <script> tags") do
             @options[:script] = true
             @options[:scan_tags] = true

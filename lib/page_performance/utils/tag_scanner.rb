@@ -1,8 +1,6 @@
-require 'net/http'
-
 module PagePerformance
   module Utils
-    class TagScanner
+    class TagScanner < HttpHelper
       attr_accessor :found_tags_for_urls
 
       def initialize(options)
@@ -36,32 +34,6 @@ module PagePerformance
 
       def tag_occurence(tag, html)
         html.scan(/<#{tag}[^>]*>/i).size
-      end
-
-      def formated_url(url)
-        case url
-        when /^http|https:\/\//
-          url
-        else
-          "http://" + url
-        end
-      end
-
-      def fetch_url(uri_str, limit = 10)
-        raise PagePerformance::Error::TooManyRedirects if limit == 0
-
-        response = Net::HTTP.get_response(URI(uri_str))
-
-        case response
-        when Net::HTTPSuccess then
-          response
-        when Net::HTTPRedirection then
-          location = response['location']
-          warn "redirected to #{location}"
-          fetch_url(location, limit - 1)
-        else
-          response.value
-        end
       end
     end
   end

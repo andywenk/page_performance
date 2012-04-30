@@ -11,7 +11,7 @@ headless, webkit based browser.
 Usage
 -----
 
-    Pageperformance v. 0.2.0
+    Pageperformance v. 0.3.0
 
       This program is intended to test the performance of a website. It uses phantomjs which is a headless,
       webkit based cli browser. 
@@ -23,6 +23,7 @@ Usage
       -w, --wait TIME                  the time to wait between the requests after the block of URLs
       -r, --repeate INTEGER            amount of repetition
       -o, --output STRING              write results to this output file
+      -g, --gps-api-key STRING         include Google PageSpeed results with this api key
       -s, --script                     count the <script> tags
       -i, --iframe                     count the <iframe> tags
       -I, --ignore-ssl-errors          advice Phantomjs to ignore SSL errors
@@ -88,6 +89,23 @@ Example output (file)
        iframe: 0
 
     Test ended at: 2012-03-04 23:54:59 +0100
+
+    GoogleSpeedTest per URL:
+    -----------------------------
+     http://www.beangie.de:
+       score: 75
+     https://www.nms.de
+       score: 99
+
+
+Google PageSpeed Integration
+----------------------------
+
+[Google PageSpeed](https://developers.google.com/speed/pagespeed/service, "Google PageSpeed") service is integrated now.
+You can use the oprionb -g or --gps-api-key and provide your Google API key. This service allows 2500 queries/per day. 
+This should be enough for smaller testing purposes. One request for each URL will be fired once at the end of the 
+program. Actually it is only available, when you use a result file (-o). For now, there is just the score result shown
+in the output file (see above). This feature is in early stage and will be enhanced soon.  
 
 Known Bugs
 ----------

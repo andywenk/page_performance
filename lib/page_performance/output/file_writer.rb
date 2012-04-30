@@ -20,13 +20,14 @@ module PagePerformance
       def write_summary
         write_average_results
         write_tag_count if @options[:scan_tags]
+        write_google_speed_test_results if @options[:google_api_key]
         write_footer
       end
 
       private
 
       def write_average_results
-        out = "\nAverage load time time:\n---------------------\n"
+        out = "\nAverage load time:\n-----------------------------\n"
         @results.each do | url, times |
           out += "\s#{url}: #{calculate_average_load_time(times)} ms\n"
         end
@@ -42,6 +43,17 @@ module PagePerformance
           tags.each do | tag, amount |
             out += "\s\s\s#{tag}: #{amount}\n"
           end
+        end
+        @result_file.write(out)
+      end
+
+      def write_google_speed_test_results
+        google_speed_test = Utils::GooglePageSpeed.new(@options)
+        speed_test_results = google_speed_test.invoke_speed_test
+        out = "\nGoogleSpeedTest per URL:\n-----------------------------\n"
+        speed_test_results.each do | url, result |
+          out += "\s#{url}:\n"
+          out += "\s\s\sscore: #{result['score']}\n"
         end
         @result_file.write(out)
       end

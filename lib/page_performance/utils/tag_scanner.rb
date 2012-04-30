@@ -1,3 +1,5 @@
+require 'net/http'
+
 module PagePerformance
   module Utils
     class TagScanner

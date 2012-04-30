@@ -1,3 +1,5 @@
+require 'optparse'
+
 module PagePerformance
   module Utils
     class ArgvParser
@@ -84,8 +86,6 @@ module PagePerformance
           exit
       end
 
-      private
-
       def urls_from_file(location)
         urls = IO.readlines(location).map do |url|
           url = url.strip!
@@ -106,8 +106,10 @@ module PagePerformance
             exit
           when /[^y]/
             exit_if_no_outputfile_given?
+            return true
           end
         end
+        false
       end
 
       def output_location(output)

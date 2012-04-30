@@ -16,7 +16,7 @@ Usage
       This program is intended to test the performance of a website. It uses phantomjs which is a headless,
       webkit based cli browser. 
 
-    usage: run_tests [options]
+    usage: run_page_performance [options]
 
       -u, --urls 'URLS'                the URLS to test
       -f, --file FILE                  the URLS to test from a file

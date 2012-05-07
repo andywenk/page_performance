@@ -9,7 +9,11 @@ module PagePerformance
       end
 
       def create_result_file
-        @result_file = File.new(@options[:output],  "w+")
+        file_name = @options[:output]
+        if File.exist?(@options[:output])
+          file_name = rename_existing_output_file(file_name)
+        end
+        @result_file = File.new(file_name,  "w+")
         @result_file.write(file_header)
       end
 
@@ -25,6 +29,20 @@ module PagePerformance
       end
 
       private
+
+      def rename_existing_output_file(file_name)
+        path_parts = file_name.split('/')
+        path_parts.delete("")
+        old_file_name = path_parts.slice!(-1)
+        file_name_parts = old_file_name.split('.')
+        new_number = file_name_parts[1].to_i + 1
+        new_file_name = [file_name_parts[0], new_number].join('.')
+        new_file = ['/', path_parts, new_file_name].join('/')
+        if File.exist?(new_file)
+          new_file = rename_existing_output_file(new_file)
+        end
+        new_file
+      end
 
       def write_average_results
         out = "\nAverage load time:\n-----------------------------\n"

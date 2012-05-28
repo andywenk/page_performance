@@ -1,16 +1,17 @@
 module PagePerformance
   module Utils
+    # check if everything in the environment is available to start the program
     class Prerequisites
       class << self
         def check_prerequisites
           ruby_version
           phantomjs_available
           
-          rescue PagePerformance::Error::RubyVersion => e
-            puts e.message
+          rescue PagePerformance::Error::RubyVersion => error
+            puts error.message
             exit
-          rescue PagePerformance::Error::Phantomjs => e
-            puts e.message
+          rescue PagePerformance::Error::Phantomjs => error
+            puts error.message
             exit
         end
 

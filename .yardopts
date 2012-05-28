@@ -1,0 +1,1 @@
+yardoc --private --protected lib/**/*.rb - run_page_performance THANKS.md

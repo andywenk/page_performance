@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>PagePerformance</h1>
+
+<p>Test the page performance of a single or more websites to compare them. You receive
+the average load time of each website. You can also get a summary about the used script 
+and / or iframe tags used in each page. </p>
+
+<p>This library uses <a href="http://code.google.com/p/phantomjs/" title="Phantomjs">Phantomjs</a>, which is a 
+headless, webkit based browser.</p>
+
+<h2>Usage</h2>
+
+<pre class="code ruby"><code>Pageperformance v. 0.3.0
+
+  This program is intended to test the performance of a website. It uses phantomjs which is a headless,
+  webkit based cli browser. 
+
+usage: run_page_performance [options]
+
+  -u, --urls 'URLS'                the URLS to test
+  -f, --file FILE                  the URLS to test from a file
+  -w, --wait TIME                  the time to wait between the requests after the block of URLs
+  -r, --repeate INTEGER            amount of repetition
+  -o, --output STRING              write results to this output file
+  -g, --gps-api-key STRING         include Google PageSpeed results with this api key
+  -s, --script                     count the &lt;script&gt; tags
+  -i, --iframe                     count the &lt;iframe&gt; tags
+  -I, --ignore-ssl-errors          advice Phantomjs to ignore SSL errors
+  -q, --quiet                      no output durng program execution
+  -h, --help                       show this message
+  -v, --version                    show version
+</code></pre>
+
+<h2>Example for running the tests:</h2>
+
+<pre class="code ruby"><code>$ ./run_page_performance -o out -u 'www.nms.de,www.beangie.de' -s -i -r 3
+round 1:
+ http://www.nms.de: 522 ms
+ http://www.beangie.de: 3487 ms
+round 2:
+ http://www.nms.de: 3244 ms
+ http://www.beangie.de: 2830 ms
+round 3:
+ http://www.nms.de: 475 ms
+ http://www.beangie.de: 3857 ms
+</code></pre>
+
+<p>It&#39;s also possible (and mostly more convenient) to put the URLs in a file. One URL per line. Then call the script like this:</p>
+
+<pre class="code ruby"><code>$ ./run_page_performance -o out -f file_with_urls -s -i -r 3
+</code></pre>
+
+<p>You can use the &#39;#&#39; character at the beginning of a line for comments.</p>
+
+<h2>Example output (file)</h2>
+
+<pre class="code ruby"><code>PagePerformance test results
+============================
+
+Test started at: 2012-03-04 23:54:39 +0100
+
+Results for performance tests for the following URLs:
+
+ + www.nms.de
+ + www.beangie.de
+
+
+Results:
+--------
+ http://www.nms.de: 522 ms
+ http://www.beangie.de: 3487 ms
+ http://www.nms.de: 3244 ms
+ http://www.beangie.de: 2830 ms
+ http://www.nms.de: 475 ms
+ http://www.beangie.de: 3857 ms
+
+Average load time time:
+---------------------
+ http://www.nms.de: 1413 ms
+ http://www.beangie.de: 3391 ms
+
+Amount of Tags found per URL:
+-----------------------------
+ www.nms.de:
+   script: 9
+   iframe: 0
+ www.beangie.de:
+   script: 9
+   iframe: 0
+
+Test ended at: 2012-03-04 23:54:59 +0100
+
+GoogleSpeedTest per URL:
+-----------------------------
+ http://www.beangie.de:
+   score: 75
+ https://www.nms.de
+   score: 99
+</code></pre>
+
+<h2>Google PageSpeed Integration</h2>
+
+<p><a href="https://developers.google.com/speed/pagespeed/service," title="Google PageSpeed">Google PageSpeed</a> service is integrated now.
+You can use the oprionb -g or --gps-api-key and provide your Google API key. This service allows 2500 queries/per day. 
+This should be enough for smaller testing purposes. One request for each URL will be fired once at the end of the 
+program. Actually it is only available, when you use a result file (-o). For now, there is just the score result shown
+in the output file (see above). This feature is in early stage and will be enhanced soon.  </p>
+
+<h2>Known Bugs</h2>
+
+<p>see <a href="https://github.com/andywenk/page_performance/issues?state=open">https://github.com/andywenk/page_performance/issues?state=open</a></p>
+
+<h2>Next Steps</h2>
+
+<p>_ fix bugs
+_ enhance
+_ write tests !!!</p>
+
+<h2>License (MIT)</h2>
+
+<p>Copyright (c) 2012 Andreas Wenk</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Mon May 28 22:27:59 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

@@ -1,39 +1,50 @@
 module PagePerformance
   module Output
+    # parent class for the various output writer classes
     class Writer
       attr_accessor :url, :request_time
 
       def initialize(options, results)
         @options = options
         @results = results
+        set_writer
         initialize_writer
       end
 
+      def set_writer
+        @write_to_console = write_to_console?
+        @write_to_file = write_to_file?
+      end
+
       def initialize_writer
-        if write_to_console?
-          @console_writer = ConsoleWriter.new
-        end
+        initialize_console_writer if @write_to_console   
+        initialize_file_writer if @write_to_file
+      end
 
-        if write_to_file?
-          @file_writer = FileWriter.new(@options, @results)
-          @file_writer.create_result_file
-        end
+      def initialize_console_writer
+        @console_writer = ConsoleWriter.new
+      end
 
-        # add other writer
+      def initialize_file_writer
+        @file_writer = FileWriter.new(@options, @results)
+        @file_writer.create_result_file
       end
 
       def write_result
-        if write_to_console?
-          @console_writer.url = url
-          @console_writer.request_time = request_time
-          @console_writer.write_to_console
-        end
+        write_result_to_console if @write_to_console
+        write_result_to_file if @write_to_file
+      end
 
-        if write_to_file?
-          @file_writer.url = url
-          @file_writer.request_time = request_time
-          @file_writer.write_to_file 
-        end
+      def write_result_to_console
+        @console_writer.url = url
+        @console_writer.request_time = request_time
+        @console_writer.write_to_console
+      end
+
+      def write_result_to_file
+        @file_writer.url = url
+        @file_writer.request_time = request_time
+        @file_writer.write_to_file 
       end
 
       def write_summary
@@ -46,15 +57,6 @@ module PagePerformance
 
       def write_to_console?
         !@options[:quiet]
-      end
-
-      def formated_url(url)
-        case url
-        when /^http|https:\/\//
-          url
-        else
-          "http://" + url
-        end
       end
     end
   end

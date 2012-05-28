@@ -2,6 +2,7 @@ require 'json'
 
 module PagePerformance
   module Utils
+    # integration of the Google PageSpeed api
     class GooglePageSpeed < HttpHelper
       attr_accessor :results
 
@@ -21,15 +22,16 @@ module PagePerformance
       end
 
       def speed_test(url)
-        url_parts = {url: url, key: @options[:google_api_key], prettyprint: false }
-        url_string = url_parts.map { |k, v| "#{k}=#{v}"}.join('&')
+        url_parts = {:url => url, :key => @options[:google_api_key], :prettyprint => false }
+        url_string = url_parts.map { |key, val| "#{key}=#{val}"}.join('&')
         url = [@google_page_speed_url, url_string].join('?')
         fetch_url(url)
       end
 
       def urls
-        raise PagePerformance::Error::NoUrlToTest if @options[:urls] == nil
-        urls = @options[:urls].map { | url | url }
+        urls = @options[:urls]
+        raise PagePerformance::Error::NoUrlToTest if urls == nil
+        urls.map { | url | url }
       end
     end
   end

@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: PagePerformance::Utils::TagScanner
+  
+    &mdash; Documentation by YARD 0.8.1
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../PagePerformance.html" title="PagePerformance (module)">PagePerformance</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Utils.html" title="PagePerformance::Utils (module)">Utils</a></span></span>
+     &raquo; 
+    <span class="title">TagScanner</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: PagePerformance::Utils::TagScanner
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="HttpHelper.html" title="PagePerformance::Utils::HttpHelper (class)">HttpHelper</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="HttpHelper.html" title="PagePerformance::Utils::HttpHelper (class)">HttpHelper</a></span></li>
+          
+            <li class="next">PagePerformance::Utils::TagScanner</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/page_performance/utils/tag_scanner.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#found_tags_for_urls-instance_method" title="#found_tags_for_urls (instance method)">- (Object) <strong>found_tags_for_urls</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute found_tags_for_urls.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#count_tags-instance_method" title="#count_tags (instance method)">- (Object) <strong>count_tags</strong>(url, html) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#fetch_html_from_urls-instance_method" title="#fetch_html_from_urls (instance method)">- (Object) <strong>fetch_html_from_urls</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (TagScanner) <strong>initialize</strong>(options) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of TagScanner.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#tag_occurence-instance_method" title="#tag_occurence (instance method)">- (Object) <strong>tag_occurence</strong>(tag, html) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="HttpHelper.html" title="PagePerformance::Utils::HttpHelper (class)">HttpHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="HttpHelper.html#fetch_url-instance_method" title="PagePerformance::Utils::HttpHelper#fetch_url (method)">#fetch_url</a></span>, <span class='object_link'><a href="HttpHelper.html#formated_url-instance_method" title="PagePerformance::Utils::HttpHelper#formated_url (method)">#formated_url</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="PagePerformance::Utils::TagScanner (class)">TagScanner</a></span></tt>) <strong>initialize</strong>(options) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of TagScanner
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/utils/tag_scanner.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='ivar'>@options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span>
+  <span class='ivar'>@found_tags_for_urls</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_fetch_html_from_urls'>fetch_html_from_urls</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="found_tags_for_urls=-instance_method"></span>
+      <span id="found_tags_for_urls-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="found_tags_for_urls-instance_method">
+  
+    - (<tt>Object</tt>) <strong>found_tags_for_urls</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute found_tags_for_urls
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/utils/tag_scanner.rb', line 4</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_found_tags_for_urls'>found_tags_for_urls</span>
+  <span class='ivar'>@found_tags_for_urls</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="count_tags-instance_method">
+  
+    - (<tt>Object</tt>) <strong>count_tags</strong>(url, html)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/utils/tag_scanner.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_count_tags'>count_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span>
+  <span class='ivar'>@found_tags_for_urls</span><span class='lbracket'>[</span><span class='id identifier rubyid_url'>url</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='ivar'>@found_tags_for_urls</span><span class='lbracket'>[</span><span class='id identifier rubyid_url'>url</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:script</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_tag_occurence'>tag_occurence</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>script</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:script</span><span class='rbracket'>]</span>
+  <span class='ivar'>@found_tags_for_urls</span><span class='lbracket'>[</span><span class='id identifier rubyid_url'>url</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:iframe</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_tag_occurence'>tag_occurence</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>iframe</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:iframe</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch_html_from_urls-instance_method">
+  
+    - (<tt>Object</tt>) <strong>fetch_html_from_urls</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/utils/tag_scanner.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch_html_from_urls'>fetch_html_from_urls</span>
+  <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:urls</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_url'>url</span><span class='op'>|</span>
+    <span class='kw'>begin</span>
+      <span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='id identifier rubyid_fetch_url'>fetch_url</span><span class='lparen'>(</span><span class='id identifier rubyid_formated_url'>formated_url</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>PagePerformance</span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>TooManyRedirects</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+      <span class='kw'>next</span>
+    <span class='kw'>rescue</span> <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTPBadResponse</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>uups ... bad response from </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='rbrace'>}</span><span class='tstring_content'> ... better continue</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>next</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_count_tags'>count_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_html'>html</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tag_occurence-instance_method">
+  
+    - (<tt>Object</tt>) <strong>tag_occurence</strong>(tag, html)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/utils/tag_scanner.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_tag_occurence'>tag_occurence</span><span class='lparen'>(</span><span class='id identifier rubyid_tag'>tag</span><span class='comma'>,</span> <span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_html'>html</span><span class='period'>.</span><span class='id identifier rubyid_scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>&lt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tag'>tag</span><span class='rbrace'>}</span><span class='tstring_content'>[^&gt;]*&gt;</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon May 28 22:28:00 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: PagePerformance::Output::FileWriter
+  
+    &mdash; Documentation by YARD 0.8.1
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../PagePerformance.html" title="PagePerformance (module)">PagePerformance</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Output.html" title="PagePerformance::Output (module)">Output</a></span></span>
+     &raquo; 
+    <span class="title">FileWriter</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: PagePerformance::Output::FileWriter
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">PagePerformance::Output::FileWriter</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/page_performance/output/file_writer.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+generates and writes output to a file
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#request_time-instance_method" title="#request_time (instance method)">- (Object) <strong>request_time</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute request_time.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#url-instance_method" title="#url (instance method)">- (Object) <strong>url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute url.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#calculate_average_load_time-instance_method" title="#calculate_average_load_time (instance method)">- (Object) <strong>calculate_average_load_time</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_result_file-instance_method" title="#create_result_file (instance method)">- (Object) <strong>create_result_file</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#file_header-instance_method" title="#file_header (instance method)">- (Object) <strong>file_header</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (FileWriter) <strong>initialize</strong>(options, results) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of FileWriter.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#rename_file_name-instance_method" title="#rename_file_name (instance method)">- (Object) <strong>rename_file_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#result_string-instance_method" title="#result_string (instance method)">- (Object) <strong>result_string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_file_name-instance_method" title="#set_file_name (instance method)">- (Object) <strong>set_file_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#url_list-instance_method" title="#url_list (instance method)">- (Object) <strong>url_list</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#write_average_results-instance_method" title="#write_average_results (instance method)">- (Object) <strong>write_average_results</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#write_footer-instance_method" title="#write_footer (instance method)">- (Object) <strong>write_footer</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#write_google_speed_test_results-instance_method" title="#write_google_speed_test_results (instance method)">- (Object) <strong>write_google_speed_test_results</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_summary-instance_method" title="#write_summary (instance method)">- (Object) <strong>write_summary</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#write_tag_count-instance_method" title="#write_tag_count (instance method)">- (Object) <strong>write_tag_count</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_to_file-instance_method" title="#write_to_file (instance method)">- (Object) <strong>write_to_file</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="PagePerformance::Output::FileWriter (class)">FileWriter</a></span></tt>) <strong>initialize</strong>(options, results) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of FileWriter
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_results'>results</span><span class='rparen'>)</span>
+  <span class='ivar'>@options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span>
+  <span class='ivar'>@results</span> <span class='op'>=</span> <span class='id identifier rubyid_results'>results</span>
+  <span class='id identifier rubyid_set_file_name'>set_file_name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="request_time=-instance_method"></span>
+      <span id="request_time-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="request_time-instance_method">
+  
+    - (<tt>Object</tt>) <strong>request_time</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute request_time
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 5</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_request_time'>request_time</span>
+  <span class='ivar'>@request_time</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="url=-instance_method"></span>
+      <span id="url-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>url</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute url
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 5</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_url'>url</span>
+  <span class='ivar'>@url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="calculate_average_load_time-instance_method">
+  
+    - (<tt>Object</tt>) <strong>calculate_average_load_time</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 80</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_calculate_average_load_time'>calculate_average_load_time</span>
+  <span class='id identifier rubyid_sum'>sum</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='ivar'>@times</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_time'>time</span><span class='op'>|</span> <span class='id identifier rubyid_sum'>sum</span> <span class='op'>+=</span> <span class='id identifier rubyid_time'>time</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_sum'>sum</span> <span class='op'>/</span> <span class='ivar'>@times</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_result_file-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create_result_file</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_result_file'>create_result_file</span>
+  <span class='ivar'>@result_file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@file_name</span><span class='comma'>,</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w+</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@result_file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_file_header'>file_header</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="file_header-instance_method">
+  
+    - (<tt>Object</tt>) <strong>file_header</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 86</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_file_header'>file_header</span>
+  <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;END</span>
+<span class='tstring_content'>PagePerformance test results
+============================
+
+</span><span class='embexpr_beg'>Test started at: #{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rbrace'>}</span><span class='tstring_content'>
+
+Results for performance tests for the following URLs:
+
+</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url_list'>url_list</span><span class='rbrace'>}</span><span class='tstring_content'>
+
+Results:
+--------
+</span><span class='heredoc_end'>END
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rename_file_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rename_file_name</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rename_file_name'>rename_file_name</span>
+  <span class='id identifier rubyid_file_renamer'>file_renamer</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>FileRenamer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@file_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_file_renamer'>file_renamer</span><span class='period'>.</span><span class='id identifier rubyid_rename'>rename</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="result_string-instance_method">
+  
+    - (<tt>Object</tt>) <strong>result_string</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 112</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_result_string'>result_string</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_request_time'>request_time</span><span class='rbrace'>}</span><span class='tstring_content'> ms\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_file_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_file_name</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_file_name'>set_file_name</span>
+  <span class='ivar'>@file_name</span> <span class='op'>=</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:output</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='ivar'>@file_name</span><span class='rparen'>)</span>
+    <span class='ivar'>@file_name</span> <span class='op'>=</span> <span class='id identifier rubyid_rename_file_name'>rename_file_name</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="url_list-instance_method">
+  
+    - (<tt>Object</tt>) <strong>url_list</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Error/NoUrlToTest.html" title="PagePerformance::Error::NoUrlToTest (class)">PagePerformance::Error::NoUrlToTest</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_url_list'>url_list</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>PagePerformance</span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>NoUrlToTest</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:urls</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span>
+
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:urls</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_url'>url</span> <span class='op'>|</span> 
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s+ </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='rbrace'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> 
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_out'>out</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_average_results-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_average_results</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_average_results'>write_average_results</span>
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\nAverage load time:\n-----------------------------\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@results</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_times'>times</span> <span class='op'>|</span>
+    <span class='ivar'>@times</span> <span class='op'>=</span> <span class='id identifier rubyid_times'>times</span>
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_calculate_average_load_time'>calculate_average_load_time</span><span class='rbrace'>}</span><span class='tstring_content'> ms\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@result_file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_footer-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_footer</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_footer'>write_footer</span>
+  <span class='ivar'>@result_file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\nTest ended at: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_google_speed_test_results-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_google_speed_test_results</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_google_speed_test_results'>write_google_speed_test_results</span>
+  <span class='id identifier rubyid_google_speed_test'>google_speed_test</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>GooglePageSpeed</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_speed_test_results'>speed_test_results</span> <span class='op'>=</span> <span class='id identifier rubyid_google_speed_test'>google_speed_test</span><span class='period'>.</span><span class='id identifier rubyid_invoke_speed_test'>invoke_speed_test</span>
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\nGoogleSpeedTest per URL:\n-----------------------------\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_speed_test_results'>speed_test_results</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span> <span class='op'>|</span>
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='rbrace'>}</span><span class='tstring_content'>:\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s\s\sscore: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>score</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@result_file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_summary-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_summary</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_summary'>write_summary</span>
+  <span class='id identifier rubyid_write_average_results'>write_average_results</span>
+  <span class='id identifier rubyid_write_tag_count'>write_tag_count</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:scan_tags</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_write_google_speed_test_results'>write_google_speed_test_results</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:google_api_key</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_write_footer'>write_footer</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_tag_count-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_tag_count</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_tag_count'>write_tag_count</span>
+  <span class='id identifier rubyid_tag_scanner'>tag_scanner</span> <span class='op'>=</span> <span class='const'>Utils</span><span class='op'>::</span><span class='const'>TagScanner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_found_tags'>found_tags</span> <span class='op'>=</span> <span class='id identifier rubyid_tag_scanner'>tag_scanner</span><span class='period'>.</span><span class='id identifier rubyid_found_tags_for_urls'>found_tags_for_urls</span>
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\nAmount of Tags found per URL:\n-----------------------------\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_found_tags'>found_tags</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span> <span class='op'>|</span>
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='rbrace'>}</span><span class='tstring_content'>:\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_tag'>tag</span><span class='comma'>,</span> <span class='id identifier rubyid_amount'>amount</span> <span class='op'>|</span>
+      <span class='id identifier rubyid_out'>out</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\s\s\s</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tag'>tag</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_amount'>amount</span><span class='rbrace'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@result_file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_to_file-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_to_file</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance/output/file_writer.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_to_file'>write_to_file</span>
+  <span class='ivar'>@result_file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_result_string'>result_string</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon May 28 22:28:00 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

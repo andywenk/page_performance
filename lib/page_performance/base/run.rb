@@ -1,5 +1,6 @@
 module PagePerformance
   module Base
+    # this is the basic page_performance object
     class Run
       def initialize(options)
         @options = options
@@ -10,32 +11,39 @@ module PagePerformance
 
       def run
         abort?
-        (1..@options[:repeate] || 1).each do |i|
-          Output::ConsoleWriter.console("round #{i}:\n")
-          request_urls
-          wait? if i < @options[:repeate].to_i
-        end
-
+        run_repeated 
         @output_writer.write_summary
       end
 
       private
 
-      def request_urls
-        raise PagePerformance::Error::NoUrlToTest if @options[:urls] == nil
+      def run_repeated
+        (1..repeate=repeating_times).each do | round |
+          Output::ConsoleWriter.console("round #{round}:\n")
+          request_urls
+          wait? if round < repeate
+        end
+      end
 
-        @options[:urls].each do |url|
+      def repeating_times
+        repeating = @options[:repeate].to_i
+        repeating = 1 if repeating < 1
+        repeating
+      end
+
+      def request_urls
+        urls = @options[:urls]
+        raise PagePerformance::Error::NoUrlToTest if urls == nil
+        urls.each do |url|
           request_url(url)
         end
       end
 
       def request_url(url)
-        url = @output_writer.formated_url(url)
+        url = Utils::HttpHelper.new.formated_url(url)
         request_time = `phantomjs --ignore-ssl-errors=#{@options[:ignore_ssl_errors]} #{@phantomjs_script} #{url}`.gsub(/\n/,'').to_i
         add_to_results_hash(url, request_time)
-        @output_writer.url = url
-        @output_writer.request_time = request_time
-        @output_writer.write_result
+        write_output(url, request_time)
       end
 
       def add_to_results_hash(url, request_time)
@@ -46,6 +54,12 @@ module PagePerformance
         @results[url] = [request_time]
       end
 
+      def write_output(url, request_time)
+        @output_writer.url = url
+        @output_writer.request_time = request_time
+        @output_writer.write_result
+      end
+
       def abort?
         trap("SIGINT") do
           puts "\n*** bye bye and have a nice day ..."
@@ -54,9 +68,11 @@ module PagePerformance
       end
 
       def wait?
-        return unless @options[:wait]
-        Output::ConsoleWriter.console("... waiting for #{@options[:wait]} s\n") 
-        sleep(@options[:wait].to_i)
+        waiting_time = @options[:wait] 
+        return unless waiting_time
+        waiting_time = waiting_time.to_i
+        Output::ConsoleWriter.console("... waiting for #{waiting_time} s\n")
+        sleep(waiting_time)
       end
     end
   end

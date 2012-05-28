@@ -1,5 +1,6 @@
 module PagePerformance
   module Utils
+    # helper class for HttpHelper for scanning tags in a HTML document
     class TagScanner < HttpHelper
       attr_accessor :found_tags_for_urls
 

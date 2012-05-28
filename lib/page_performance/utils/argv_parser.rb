@@ -2,6 +2,8 @@ require 'optparse'
 
 module PagePerformance
   module Utils
+    # frontend for the arguments parsing provided at the command line
+    # here the global @options array is created
     class ArgvParser
       attr_accessor :options, :version
 
@@ -85,8 +87,8 @@ module PagePerformance
           puts "There is a problem with your options -> #{error}"
           exit
 
-        rescue PagePerformance::Error::NoUrlToTest => e
-          puts e.message
+        rescue PagePerformance::Error::NoUrlToTest => error
+          puts error.message
           exit
       end
 

@@ -1,5 +1,6 @@
 module PagePerformance
   module Output
+    # generates output for the console
     class ConsoleWriter
       attr_accessor :url, :request_time
 

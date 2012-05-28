@@ -2,6 +2,7 @@ require 'net/https'
 
 module PagePerformance
   module Utils
+    # helper clas for various HTTP related stuff
     class HttpHelper
       def formated_url(url)
         case url

@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: PagePerformance
+  
+    &mdash; Documentation by YARD 0.8.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">PagePerformance</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: PagePerformance
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/page_performance.rb<span class="defines">,<br />
+  lib/page_performance/base/run.rb,<br /> lib/page_performance/error/error.rb,<br /> lib/page_performance/output/writer.rb,<br /> lib/page_performance/utils/argv_parser.rb,<br /> lib/page_performance/utils/http_helper.rb,<br /> lib/page_performance/utils/tag_scanner.rb,<br /> lib/page_performance/output/file_writer.rb,<br /> lib/page_performance/utils/file_renamer.rb,<br /> lib/page_performance/utils/prerequisites.rb,<br /> lib/page_performance/output/console_writer.rb,<br /> lib/page_performance/utils/google_page_speed.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+This module includes the main method &#8216;run&#8217; which is invoked  by
+the run_page_perfomance script
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="PagePerformance/Base.html" title="PagePerformance::Base (module)">Base</a></span>, <span class='object_link'><a href="PagePerformance/Error.html" title="PagePerformance::Error (module)">Error</a></span>, <span class='object_link'><a href="PagePerformance/Output.html" title="PagePerformance::Output (module)">Output</a></span>, <span class='object_link'><a href="PagePerformance/Utils.html" title="PagePerformance::Utils (module)">Utils</a></span>
+    
+  
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#check_prerequisites-class_method" title="check_prerequisites (class method)">+ (Object) <strong>check_prerequisites</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+check various prerequisites like Phantomjs availability and Ruby version.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_cl-class_method" title="parse_cl (class method)">+ (Object) <strong>parse_cl</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+parse the command line.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#rescue_errors-class_method" title="rescue_errors (class method)">+ (Object) <strong>rescue_errors</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+rescue errors, write them to STDOUT and exit if errors occure.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run-class_method" title="run (class method)">+ (Object) <strong>run</strong>(args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+main method to be invoked.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#run_pageperformance-class_method" title="run_pageperformance (class method)">+ (Object) <strong>run_pageperformance</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+start running the page_performance tests.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#version-class_method" title="version (class method)">+ (String) <strong>version</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="check_prerequisites-class_method">
+  
+    + (<tt>Object</tt>) <strong>check_prerequisites</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+check various prerequisites like Phantomjs availability and Ruby version
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_check_prerequisites'>check_prerequisites</span>
+  <span class='const'>PagePerformance</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>Prerequisites</span><span class='period'>.</span><span class='id identifier rubyid_check_prerequisites'>check_prerequisites</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_cl-class_method">
+  
+    + (<tt>Object</tt>) <strong>parse_cl</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+parse the command line
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse_cl'>parse_cl</span>
+  <span class='ivar'>@argv_parser</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rescue_errors-class_method">
+  
+    + (<tt>Object</tt>) <strong>rescue_errors</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+rescue errors, write them to STDOUT and exit if errors occure
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_rescue_errors'>rescue_errors</span>
+  <span class='kw'>rescue</span> <span class='const'>PagePerformance</span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>NoUrlToTest</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+    <span class='id identifier rubyid_exit'>exit</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run-class_method">
+  
+    + (<tt>Object</tt>) <strong>run</strong>(args) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+main method to be invoked
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+input from command line
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='ivar'>@argv_parser</span> <span class='op'>=</span> <span class='const'>PagePerformance</span><span class='op'>::</span><span class='const'>Utils</span><span class='op'>::</span><span class='const'>ArgvParser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_check_prerequisites'>check_prerequisites</span>
+  <span class='id identifier rubyid_parse_cl'>parse_cl</span>
+  <span class='id identifier rubyid_run_pageperformance'>run_pageperformance</span>
+  <span class='id identifier rubyid_rescue_errors'>rescue_errors</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_pageperformance-class_method">
+  
+    + (<tt>Object</tt>) <strong>run_pageperformance</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+start running the page_performance tests
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_run_pageperformance'>run_pageperformance</span>
+  <span class='id identifier rubyid_page_performance'>page_performance</span> <span class='op'>=</span> <span class='const'>PagePerformance</span><span class='op'>::</span><span class='const'>Base</span><span class='op'>::</span><span class='const'>Run</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@argv_parser</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_page_performance'>page_performance</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="version-class_method">
+  
+    + (<tt>String</tt>) <strong>version</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/page_performance.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>0.3.0</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon May 28 22:27:59 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

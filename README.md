@@ -112,6 +112,11 @@ Known Bugs
 
 see https://github.com/andywenk/page_performance/issues?state=open
 
+Code Documentation
+------------------
+
+http://rdoc.info/github/andywenk/page_performance/master/frames
+
 Next Steps
 ----------
 

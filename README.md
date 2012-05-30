@@ -117,12 +117,33 @@ Code Documentation
 
 http://rdoc.info/github/andywenk/page_performance/master/frames
 
+Debugging
+---------
+
+You can debug PagePerformance easily wiht the awesome [pry gem](http://pry.github.com/). If you start the
+program with the environemnt variable DEBUG=true, the pry gem is required in <tt>lib/require.rb</tt>. Setting a 
+break point is done by <tt>binding.pry</tt>
+
+    in lib/page_performance
+    def self.parse_cl
+      binding.pry
+      @argv_parser.parse
+    end
+
+    $ DEBUG=true ./run_page_performance -u 'www.google.de'
+    From: /Users/andwen/Documents/project/pageperformance/lib/page_performance.rb @ line 28 PagePerformance.parse_cl:
+
+    28:   def self.parse_cl
+    => 29:     binding.pry
+    30:     @argv_parser.parse
+    31:   end
+
 Next Steps
 ----------
 
-_ fix bugs
-_ enhance
-_ write tests !!!
+_ fix bugs  
+_ enhance  
+_ write tests !!!  
 
 License (MIT)
 -------------

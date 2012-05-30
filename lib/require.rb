@@ -21,3 +21,6 @@ require 'page_performance/utils/file_renamer'
 require 'page_performance/output/writer'
 require 'page_performance/output/console_writer'
 require 'page_performance/output/file_writer'
+
+# for debugging with pry, set the environemnet variable DEBUG=true
+require 'pry' if ENV['DEBUG']

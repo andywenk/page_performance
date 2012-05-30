@@ -49,7 +49,7 @@ It's also possible (and mostly more convenient) to put the URLs in a file. One U
 
     $ ./run_page_performance -o out -f file_with_urls -s -i -r 3
 
-You can use the '#' character at the beginning of a line for comments.
+You can use the <tt>#</tt> character at the beginning of a line for comments.
 
 Example output (file)
 ---------------------
@@ -102,9 +102,9 @@ Google PageSpeed Integration
 ----------------------------
 
 [Google PageSpeed](https://developers.google.com/speed/pagespeed/service, "Google PageSpeed") service is integrated now.
-You can use the oprionb -g or --gps-api-key and provide your Google API key. This service allows 2500 queries/per day. 
+You can use the option <tt>-g</tt> or <tt>--gps-api-key</tt> and provide your Google API key. This service allows 2500 queries/per day. 
 This should be enough for smaller testing purposes. One request for each URL will be fired once at the end of the 
-program. Actually it is only available, when you use a result file (-o). For now, there is just the score result shown
+program. Actually it is only available, when you use a result file (<tt>-o</tt>). For now, there is just the score result shown
 in the output file (see above). This feature is in early stage and will be enhanced soon.  
 
 Known Bugs
@@ -120,9 +120,9 @@ http://rdoc.info/github/andywenk/page_performance/master/frames
 Debugging
 ---------
 
-You can debug PagePerformance easily wiht the awesome [pry gem](http://pry.github.com/). If you start the
-program with the environemnt variable DEBUG=true, the pry gem is required in <tt>lib/require.rb</tt>. Setting a 
-break point is done by <tt>binding.pry</tt>
+You can debug PagePerformance easily with the awesome [pry gem](http://pry.github.com/). If you start the
+program with the environemnt variable <tt>DEBUG=true</tt>, the pry gem is required in <tt>lib/require.rb</tt>. Setting a 
+break point inside the code is done by <tt>binding.pry</tt>.
 
     in lib/page_performance
     def self.parse_cl

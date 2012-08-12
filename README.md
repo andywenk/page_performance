@@ -8,6 +8,8 @@ and / or iframe tags used in each page.
 This library uses [Phantomjs](http://code.google.com/p/phantomjs/ "Phantomjs"), which is a 
 headless, webkit based browser.
 
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/andywenk/page_performance)
+
 Usage
 -----
 

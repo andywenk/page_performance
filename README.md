@@ -13,25 +13,28 @@ headless, webkit based browser.
 Usage
 -----
 
-    Pageperformance v. 0.4.0
+    PagePerformance v. 0.4.0
 
-      This program is intended to test the performance of a website. It uses phantomjs which is a headless,
-      webkit based cli browser. 
+    This program is intended to test the performance of a website. It uses phantomjs which is a headless,
+    webkit based cli browser.
 
     usage: run_page_performance [options]
 
-      -u, --urls 'URLS'                the URLS to test
-      -f, --file FILE                  the URLS to test from a file
-      -w, --wait TIME                  the time to wait between the requests after the block of URLs
-      -r, --repeate INTEGER            amount of repetition
-      -o, --output STRING              write results to this output file
-      -g, --gps-api-key STRING         include Google PageSpeed results with this api key
-      -s, --script                     count the <script> tags
-      -i, --iframe                     count the <iframe> tags
-      -I, --ignore-ssl-errors          advice Phantomjs to ignore SSL errors
-      -q, --quiet                      no output durng program execution
-      -h, --help                       show this message
-      -v, --version                    show version
+        -u, --urls 'URLS'                the URLS to test
+        -f, --file FILE                  the URLS to test from a file
+        -a, --bau USER                   Basic-Authentication username
+        -p, --bap PASSWORD               Basic-Authentication password
+        -B, --base-url                   Use this URL as base
+        -w, --wait TIME                  the time to wait between the requests after the block of URLs
+        -r, --repeate INTEGER            amount of repetition
+        -o, --output STRING              write results to this output file
+        -g, --gps-api-key STRING         include Google PageSpeed results with this api key
+        -s, --script                     count the <script> tags
+        -i, --iframe                     count the <iframe> tags
+        -I, --ignore-ssl-errors          advice Phantomjs to ignore SSL errors
+        -q, --quiet                      no output durng program execution
+        -h, --help                       show this message
+        -v, --version                    show version
 
 Example for running the tests:
 ------------------------------

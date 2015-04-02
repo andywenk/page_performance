@@ -5,7 +5,7 @@ module PagePerformance
   module Utils
     # helper clas for various HTTP related stuff
     class HttpHelper
-      def formated_url(url, base_url='', auth_user='', auth_password='')
+      def formated_url(url, base_url='', auth_user=nil, auth_password=nil)
         uri = URI.join(base_url, url)
         uri.user = auth_user
         uri.password = auth_password

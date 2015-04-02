@@ -1,16 +1,12 @@
 require 'net/https'
+require 'uri'
 
 module PagePerformance
   module Utils
     # helper clas for various HTTP related stuff
     class HttpHelper
-      def formated_url(url)
-        case url
-        when /^http|https:\/\//
-          url
-        else
-          "http://" + url
-        end
+      def formated_url(url, base_url='')
+        URI.join(base_url, url)
       end
 
       def fetch_url(uri_str, options = nil, limit = 10)

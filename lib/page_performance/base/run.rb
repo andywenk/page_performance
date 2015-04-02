@@ -40,7 +40,7 @@ module PagePerformance
       end
 
       def request_url(url)
-        url = Utils::HttpHelper.new.formated_url(url)
+        url = Utils::HttpHelper.new.formated_url(url, @options[:base_url])
         request_answer = `phantomjs --ignore-ssl-errors=#{@options[:ignore_ssl_errors]} #{@phantomjs_script} #{url}`.gsub(/\n/,'')
         add_to_results_hash(url, request_answer)
         write_output(url, request_answer)

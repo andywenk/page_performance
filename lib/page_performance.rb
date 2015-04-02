@@ -30,7 +30,7 @@ module PagePerformance
   #
   # @return [String]
   def self.version
-    '0.4.0'
+    '0.5.0'
   end
 
   private

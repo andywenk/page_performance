@@ -6,17 +6,10 @@ module PagePerformance
         def check_prerequisites
           ruby_version
           phantomjs_available
-          
-          rescue PagePerformance::Error::RubyVersion => error
-            puts error.message
-            exit
-          rescue PagePerformance::Error::Phantomjs => error
-            puts error.message
-            exit
         end
 
         def ruby_version
-          raise PagePerformance::Error::RubyVersion unless `ruby -v` =~ /1.9.[2 3 4]/
+          raise PagePerformance::Error::RubyVersion unless `ruby -v` =~ /2.2.*/
         end
 
         def phantomjs_available

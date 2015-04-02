@@ -15,7 +15,7 @@ module PagePerformance
       def fetch_html_from_urls
         @options[:urls].each do |url|
           begin
-            html = fetch_url(formated_url(url))
+            html = fetch_url(formated_url(url), @options[:basic_auth])
           rescue PagePerformance::Error::TooManyRedirects => e
             puts e.message
             next

@@ -2,7 +2,8 @@ module PagePerformance
   module Output
     # generates output for the console
     class ConsoleWriter
-      attr_accessor :url, :request_time
+      result =
+      attr_accessor :url, :request_answer
 
       def initialize
       end
@@ -16,7 +17,8 @@ module PagePerformance
       end
 
       def result_string
-        "\s#{url}: #{request_time} ms\n"
+        result = request_answer.to_i.is_a?(Fixnum) ? "#{request_answer} ms" : request_answer
+        "\s#{url}: #{result}\n"
       end
     end
   end

@@ -11,7 +11,7 @@ module PagePerformance
 
       def run
         abort?
-        run_repeated 
+        run_repeated
         @output_writer.write_summary
       end
 
@@ -41,22 +41,22 @@ module PagePerformance
 
       def request_url(url)
         url = Utils::HttpHelper.new.formated_url(url)
-        request_time = `phantomjs --ignore-ssl-errors=#{@options[:ignore_ssl_errors]} #{@phantomjs_script} #{url}`.gsub(/\n/,'').to_i
-        add_to_results_hash(url, request_time)
-        write_output(url, request_time)
+        request_answer = `phantomjs --ignore-ssl-errors=#{@options[:ignore_ssl_errors]} #{@phantomjs_script} #{url}`.gsub(/\n/,'')
+        add_to_results_hash(url, request_answer)
+        write_output(url, request_answer)
       end
 
-      def add_to_results_hash(url, request_time)
-        if @results.has_key?(url) 
-          @results[url] << request_time
+      def add_to_results_hash(url, request_answer)
+        if @results.has_key?(url)
+          @results[url] << request_answer
           return
         end
-        @results[url] = [request_time]
+        @results[url] = [request_answer]
       end
 
-      def write_output(url, request_time)
+      def write_output(url, request_answer)
         @output_writer.url = url
-        @output_writer.request_time = request_time
+        @output_writer.request_answer = request_answer
         @output_writer.write_result
       end
 
@@ -68,7 +68,7 @@ module PagePerformance
       end
 
       def wait?
-        waiting_time = @options[:wait] 
+        waiting_time = @options[:wait]
         return unless waiting_time
         waiting_time = waiting_time.to_i
         Output::ConsoleWriter.console("... waiting for #{waiting_time} s\n")

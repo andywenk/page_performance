@@ -23,12 +23,22 @@ module PagePerformance
           opts.separator "usage: run_page_performance [options]"
           opts.separator ""
 
+          @options[:basic_auth] = {}
+
           opts.on("-u URLS", "--urls 'URLS'", "the URLS to test") do |urls|
             @options[:urls] = urls.gsub(/\s/,'').split(',')
           end
 
           opts.on("-f FILE", "--file FILE", "the URLS to test from a file") do |file|
             @options[:urls] = urls_from_file(file)
+          end
+
+          opts.on("-a", "--bau USER", "Basic-Authentication username") do |user|
+            @options[:basic_auth][:user] = user
+          end
+
+          opts.on("-p", "--bap PASSWORD", "Basic-Authentication password") do |password|
+            @options[:basic_auth][:password] = password
           end
 
           opts.on("-w", "--wait TIME", "the time to wait between the requests after the block of URLs") do |time|

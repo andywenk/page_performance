@@ -9,7 +9,7 @@ module PagePerformance
       def initialize(options)
         @options = options
         @results = {}
-        @google_page_speed_url = 'https://www.googleapis.com/pagespeedonline/v1/runPagespeed'
+        @google_page_speed_url = 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed'
       end
 
       def invoke_speed_test
@@ -22,10 +22,11 @@ module PagePerformance
       end
 
       def speed_test(url)
-        url_parts = {:url => url, :key => @options[:google_api_key], :prettyprint => false }
+        url_parts = {url: url, key: @options[:google_api_key], prettyprint: false, strategy: 'desktop'}
         url_string = url_parts.map { |key, val| "#{key}=#{val}"}.join('&')
         url = [@google_page_speed_url, url_string].join('?')
-        fetch_url(url)
+        puts "Performing Google Page Speed:"
+        fetch_url(url, @options[:basic_auth])
       end
 
       def urls

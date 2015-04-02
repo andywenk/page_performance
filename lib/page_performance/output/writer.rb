@@ -2,7 +2,7 @@ module PagePerformance
   module Output
     # parent class for the various output writer classes
     class Writer
-      attr_accessor :url, :request_time
+      attr_accessor :url, :request_answer
 
       def initialize(options, results)
         @options = options
@@ -17,7 +17,7 @@ module PagePerformance
       end
 
       def initialize_writer
-        initialize_console_writer if @write_to_console   
+        initialize_console_writer if @write_to_console
         initialize_file_writer if @write_to_file
       end
 
@@ -37,14 +37,14 @@ module PagePerformance
 
       def write_result_to_console
         @console_writer.url = url
-        @console_writer.request_time = request_time
+        @console_writer.request_answer = request_answer
         @console_writer.write_to_console
       end
 
       def write_result_to_file
         @file_writer.url = url
-        @file_writer.request_time = request_time
-        @file_writer.write_to_file 
+        @file_writer.request_answer = request_answer
+        @file_writer.write_to_file
       end
 
       def write_summary

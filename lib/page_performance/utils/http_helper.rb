@@ -13,12 +13,19 @@ module PagePerformance
         end
       end
 
-      def fetch_url(uri_str, limit = 10)
+      def fetch_url(uri_str, options = nil, limit = 10)
+        puts options
         raise PagePerformance::Error::TooManyRedirects if limit == 0
 
         uri = URI(uri_str)
+        req = Net::HTTP::Get.new(uri.request_uri)
+
+        unless options.nil?
+          req.basic_auth options[:user], options[:pass]
+        end
+
         response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-          http.request(Net::HTTP::Get.new(uri.request_uri))
+          http.request(req)
         end
 
         case response
@@ -27,7 +34,7 @@ module PagePerformance
         when Net::HTTPRedirection then
           location = response['location']
           warn "redirected to #{location}"
-          fetch_url(location, limit - 1)
+          fetch_url(location, options, limit - 1)
         else
           response.value
         end

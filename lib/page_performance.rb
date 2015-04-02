@@ -1,25 +1,44 @@
-# This module includes the main method 'run' which is invoked 
+#
+# This module includes the main method 'run' which is invoked
 # by the run_page_perfomance script
+#
 module PagePerformance
+
   # main method to be invoked
+  #
   # @param [String] args input from command line
   def self.run(args)
-    @argv_parser = PagePerformance::Utils::ArgvParser.new(args)
+    @argv_parser  = PagePerformance::Utils::ArgvParser.new(args)
+    @logger       = PagePerformance::Utils::Logging.new('warn')
 
-    check_prerequisites
-    parse_cl
-    run_pageperformance
-    rescue_errors
+    begin
+      check_prerequisites
+      parse_cl
+      run_pageperformance
+    rescue PagePerformance::Error::NoUrlToTest => e
+      @logger.log(e.message)
+    rescue PagePerformance::Error::RubyVersion => e
+      @logger.log(e.message)
+    rescue PagePerformance::Error::Phantomjs => e
+      @logger.log(e.message)
+    rescue Net::HTTPServerException => e
+      @logger.log(e.message)
+    end
   end
 
+  # version
+  #
   # @return [String]
   def self.version
-    '0.3.0'
+    '0.4.0'
   end
 
   private
 
-  # check various prerequisites like Phantomjs availability and Ruby version
+  # check various prerequisites like Phantomjs availability
+  # and Ruby version
+  #
+  # @return
   def self.check_prerequisites
     PagePerformance::Utils::Prerequisites.check_prerequisites
   end
@@ -33,12 +52,5 @@ module PagePerformance
   def self.run_pageperformance
     page_performance = PagePerformance::Base::Run.new(@argv_parser.options)
     page_performance.run
-  end
-
-  # rescue errors, write them to STDOUT and exit if errors occure
-  def self.rescue_errors
-    rescue PagePerformance::Error::NoUrlToTest => exception
-      puts exception.message
-      exit
   end
 end

@@ -33,6 +33,10 @@ module PagePerformance
             @options[:urls] = urls_from_file(file)
           end
 
+          opts.on("-B", "--base-url URL", "Use this URL as base") do |user|
+            @options[:base_url] = user
+          end
+
           opts.on("-a", "--bau USER", "Basic-Authentication username") do |user|
             @options[:basic_auth][:user] = user
           end

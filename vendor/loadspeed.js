@@ -1,11 +1,14 @@
-var page = new WebPage(); 
+var page    = require('webpage').create();
+var system  = require('system');
+var address = system.args[1];
 var t = Date.now();
-page.open(phantom.args[0], function (status) {
-    if (status !== 'success') {
-        console.log('FAIL to load the address ' + address);
-    } else {
-        t = Date.now() - t;
-        console.log(t);
-    }
-    phantom.exit();
+
+page.open(address, function(status) {
+  if (status !== 'success') {
+    console.log('not_found');
+  } else {
+    t = Date.now() - t;
+    console.log(t);
+  }
+  phantom.exit();
 });

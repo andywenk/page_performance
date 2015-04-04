@@ -13,7 +13,7 @@ headless, webkit based browser.
 Usage
 -----
 
-    PagePerformance v. 0.5.2
+    PagePerformance v. 0.5.3
 
     This program is intended to test the performance of a website. It uses phantomjs which is a headless,
     webkit based cli browser.
@@ -39,7 +39,7 @@ Usage
 Example for running the tests:
 ------------------------------
 
-    $ ./run_page_performance -o out -u 'www.nms.de,www.beangie.de' -s -i -r 3
+    $ ./run_page_performance -o out -u 'http://www.nms.de,http://www.beangie.de' -s -i -r 3
     round 1:
      http://www.nms.de: 522 ms
      http://www.beangie.de: 3487 ms
@@ -56,53 +56,6 @@ It's also possible (and mostly more convenient) to put the URLs in a file. One U
 
 You can use the <tt>#</tt> character at the beginning of a line for comments.
 
-Example output (file)
----------------------
-
-    PagePerformance test results
-    ============================
-
-    Test started at: 2012-03-04 23:54:39 +0100
-
-    Results for performance tests for the following URLs:
-
-     + www.nms.de
-     + www.beangie.de
-
-
-    Results:
-    --------
-     http://www.nms.de: 522 ms
-     http://www.beangie.de: 3487 ms
-     http://www.nms.de: 3244 ms
-     http://www.beangie.de: 2830 ms
-     http://www.nms.de: 475 ms
-     http://www.beangie.de: 3857 ms
-
-    Average load time time:
-    ---------------------
-     http://www.nms.de: 1413 ms
-     http://www.beangie.de: 3391 ms
-
-    Amount of Tags found per URL:
-    -----------------------------
-     www.nms.de:
-       script: 9
-       iframe: 0
-     www.beangie.de:
-       script: 9
-       iframe: 0
-
-    Test ended at: 2012-03-04 23:54:59 +0100
-
-    GoogleSpeedTest per URL:
-    -----------------------------
-     http://www.beangie.de:
-       score: 75
-     https://www.nms.de
-       score: 99
-
-
 Google PageSpeed Integration
 ----------------------------
 
@@ -110,7 +63,83 @@ Google PageSpeed Integration
 You can use the option <tt>-g</tt> or <tt>--gps-api-key</tt> and provide your Google API key. This service allows 2500 queries/per day. 
 This should be enough for smaller testing purposes. One request for each URL will be fired once at the end of the 
 program. Actually it is only available, when you use a result file (<tt>-o</tt>). For now, there is just the score result shown
-in the output file (see above). This feature is in early stage and will be enhanced soon.  
+in the output file (see above). This feature is in early stage and will be enhanced soon. 
+
+Example output (file)
+---------------------
+
+    PagePerformance test results
+    ============================
+
+    Test started at: 2015-04-04 02:23:22 +0200
+
+    Results for performance tests for the following URLs:
+
+     + http://www.nms.de
+     + http://www.beangie.de
+
+    Results:
+    --------
+     http://www.nms.de: 1323 ms
+     http://www.beangie.de: 1393 ms
+     http://www.nms.de: 976 ms
+     http://www.beangie.de: 1428 ms
+     http://www.nms.de: 1010 ms
+     http://www.beangie.de: 1396 ms
+
+    Average load time:
+    -----------------------------
+     http://www.nms.de: 1103 ms
+     http://www.beangie.de: 1405 ms
+
+    Amount of Tags found per URL:
+    -----------------------------
+     http://www.nms.de:
+       script: 4
+       iframe: 1
+     http://www.beangie.de:
+       script: 9
+       iframe: 0
+
+    GoogleSpeedTest per URL:
+    -----------------------------
+     http://www.nms.de:
+       ID: http://andywenk.github.io/
+       Title: Welcome to my personal blog where I post about stuff I do
+       HTTP-Response Code: 200
+       Score: 89
+
+       Page Statistics:
+            Number of Resources:            10
+            Number of different hosts:      7
+            Number of static ressources:    7
+            Total Request-Bytes:            0.00 KB
+            HTML-Response-Bytes:            13.00 KB
+            Number of CSS ressources:       1
+            CSS-Response-Bytes:             28.00 KB
+            Number of JS ressources:        4
+            JavaScript-Response-Bytes:      138.00 KB
+            Image-Response-Bytes:           22.00 KB
+            Other-Response-Bytes:           0.00 KB
+
+     http://www.beangie.de:
+       ID: http://www.beangie.de/
+       Title: Freie Art-Direktorin in Hamburg | Angela Becker | Screendesign | Print-Design | Freelance Art Direction Hamburg
+       HTTP-Response Code: 200
+       Score: 60
+
+       Page Statistics:
+            Number of Resources:            51
+            Number of different hosts:      1
+            Number of static ressources:    50
+            Total Request-Bytes:            2.00 KB
+            HTML-Response-Bytes:            9.00 KB
+            Number of CSS ressources:       2
+            CSS-Response-Bytes:             18.00 KB
+            Number of JS ressources:        7
+            JavaScript-Response-Bytes:      311.00 KB
+            Image-Response-Bytes:           1070.00 KB
+            Other-Response-Bytes:           0.00 KB
 
 Known Bugs
 ----------

@@ -5,8 +5,8 @@ module PagePerformance
       attr_accessor :found_tags_for_urls
 
       def initialize(options)
-        @options = options
-        @found_tags_for_urls = {}
+        @options              = options
+        @found_tags_for_urls  = {}
         fetch_html_from_urls
       end
 
@@ -15,7 +15,7 @@ module PagePerformance
       def fetch_html_from_urls
         @options[:urls].each do |url|
           begin
-            html = fetch_url(formated_url(url), @options[:basic_auth])
+            html = fetch_url(formated_url(url, @options), @options)
           rescue PagePerformance::Error::TooManyRedirects => e
             puts e.message
             next

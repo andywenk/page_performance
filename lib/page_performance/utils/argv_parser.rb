@@ -33,16 +33,16 @@ module PagePerformance
             @options[:urls] = urls_from_file(file)
           end
 
-          opts.on("-B", "--base-url URL", "Use this URL as base") do |user|
-            @options[:base_url] = user
+          opts.on("-B", "--base-url URL", "Use this URL as base") do |base_url|
+            @options[:base_url] = base_url
           end
 
           opts.on("-a", "--bau USER", "Basic-Authentication username") do |user|
-            @options[:basic_auth][:user] = user
+            @options[:basic_auth_user] = user
           end
 
           opts.on("-p", "--bap PASSWORD", "Basic-Authentication password") do |password|
-            @options[:basic_auth][:password] = password
+            @options[:basic_auth_password] = password
           end
 
           opts.on("-w", "--wait TIME", "the time to wait between the requests after the block of URLs") do |time|
